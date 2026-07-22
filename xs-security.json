@@ -1,0 +1,33 @@
+{
+  "xsappname": "BTP-hpbuysell_adm_emlmnmt",
+  "tenant-mode": "dedicated",
+
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.AlertAdmin",
+      "description": "Administrator access"
+    },
+    {
+      "name": "$XSAPPNAME.AlertUser",
+      "description": "Normal User access"
+    }
+  ],
+
+  "role-templates": [
+    {
+      "name": "AlertAdmin",
+      "description": "Alert Administrator",
+      "scope-references": [
+        "$XSAPPNAME.AlertAdmin",
+        "$XSAPPNAME.AlertUser"
+      ]
+    },
+    {
+      "name": "AlertUser",
+      "description": "Alert User",
+      "scope-references": [
+        "$XSAPPNAME.AlertUser"
+      ]
+    }
+  ]
+}

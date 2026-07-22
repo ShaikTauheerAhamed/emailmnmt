@@ -1,0 +1,28 @@
+{
+  "name": "BTP-hpbuysell_adm_emlmnmt",
+  "version": "1.0.0",
+  "dependencies": {
+    "@sap/cds": "^9",
+    "@sap/xssec": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2.4",
+    "cds-plugin-ui5": "^0.17.0"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-email": "cds watch --open hpbuysell.adm.emlmnmt.email/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-emailmanagement": "cds watch --open hpbuysell.adm.emlmnmt.emailmanagement/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "private": true,
+  "cds": {
+    "requires": {
+      "[production]": {
+        "auth": "xsuaa"
+      }
+    }
+  },
+  "workspaces": [
+    "app/*"
+  ]
+}

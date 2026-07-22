@@ -1,0 +1,91 @@
+###
+get http://localhost:4004/odata/v4/AlertService/$metadata
+
+### alert mtadata
+GET http://localhost:4004/odata/v4/alert/$metadata
+
+### alert Alerts
+GET http://localhost:4004/odata/v4/alert/Alerts
+
+### subscribe mtadata
+GET http://localhost:4004/odata/v4/alert/MySubscriptions
+
+### Service Document
+GET http://localhost:4004/odata/v4/alert
+Accept: application/json
+
+### Add Alert
+POST http://localhost:4004/odata/v4/alert/addAlert
+Content-Type: application/json
+
+{
+  "description":"Test Alert",
+  "category":"PO"
+}
+
+### delete alert
+POST http://localhost:4004/odata/v4/alert/deleteAlert
+Content-Type: application/json
+
+{
+  "description":"Test Alert",
+  "category":"PO"
+}
+
+### missing description
+POST http://localhost:4004/odata/v4/alert/addAlert
+Content-Type: application/json
+
+{
+    "description":"",
+    "category":"PO"
+}
+
+### Subscribe to alert
+POST http://localhost:4004/odata/v4/alert/subscribe
+Content-Type: application/json
+
+{
+   "alertId":"33"
+}
+
+### Test unsubscribe
+POST http://localhost:4004/odata/v4/alert/unsubscribe
+Content-Type: application/json
+
+{
+   "subscriptionId":"a4ba73d9-0980-4154-9fa6-df67beb7355f"
+}
+
+### wrong alertID
+POST http://localhost:4004/odata/v4/alert/subscribe
+Content-Type: application/json
+
+{
+    "alertId":"99"
+}
+
+### read my subscriptions
+GET http://localhost:4004/odata/v4/alert/MySubscriptions
+Accept: application/json
+
+### add filter
+POST http://localhost:4004/odata/v4/alert/addFilterValue
+Content-Type: application/json
+
+{
+   "subscriptionId":"a4ba73d9-0980-4154-9fa6-df67beb7355f",
+   "fieldCode":"PROJ",
+   "value":"P100",
+   "valueText":"Project 100"
+}
+
+###check alert view
+GET http://localhost:4004/odata/v4/alert/AlertList
+
+
+### Check Virtual Entity
+GET http://localhost:4004/odata/v4/alert/AlertList
+
+###Applcable fields
+GET http://localhost:4004/odata/v4/alert/applicableFields(alertId=20)

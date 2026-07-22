@@ -1,0 +1,49 @@
+alertID,description,category,active
+1,New Sales Requisition Created,SOREQ,true
+2,SO Requisition on hold,SOREQ,true
+3,Created or Updated Sales Order,SO,true
+4,New Sales Order GTS Hold,SO,true
+5,New Sales Order Preq Block,SO,true
+6,Sales Order Change Request Was Received,SO,true
+7,Sales Order Cancellation Request Received,SO,true
+8,Order / Change Order Acknowledgement,SO,true
+9,Order Cancellation Confirmation,SO,true
+10,New Purchase Order(s),PO,true
+11,Purchase Order Change,PO,true
+12,Purchase Order Cancellation,PO,true
+13,Change Request For Purchase Order Received,PO,true
+14,Change Acknowledgement / Acknowledgement For Purchase Order Received,PO,true
+15,Purchase Order(s) Declined From Vendor,PO,true
+16,Acknowledgement Reminder for Purchase Order(s),PO,true
+17,Advance Shipment Notice (ASN) Reminder,PO,true
+18,ASN Inbound Summary Report,IBSHP,true
+19,Advance Shipping Notification For Purchase Order(s) Received,IBSHP,true
+20,Advance Shipping Notification Update For Purchase Order(s) Received,IBSHP,true
+21,GR_GI Loading Failure Report_IB,IBSHP,true
+22,GR_GI Loading Failure Report_OB,OBSHP,true
+23,ASN Outbound Summary Report,OBSHP,true
+24,Advance Shipping Notification (ASN) Reminder,OBSHP,true
+25,IB/OB Change Loading Failure Report,IBOBSHP,true
+26,GR/GI Loading Failure Report Inbound Shipment,IBSHP,true
+27,New Invoice For Customs Purpose (ICP) Released,INV,true
+28,Packing List Released,INV,true
+29,New Non EDI Invoice,INV,true
+30,New EDI Invoice,INV,true
+31,New RMA Request Submitted by Customer,RMA,true
+32,New RMA Requested by HP,RMA,true
+33,RMA Changed,RMA,true
+34,RMA Number And Shipping Instruction Entered,RMA,true
+35,RMA Request Rejected,RMA,true
+36,RMA ASN Details Entered,RMA,true
+37,RMA Ticket Cancellation Request From Customer,RMA,true
+38,Supplier Credit Note Details Entered by Supplier,RMA,true
+39,RMA Cancellation Notice,RMA,true
+40,Reminders to Provide RMA Number,RMA,true
+41,RMAs not closed for more than 8 hours,RMA,true
+42,RMA Shipment Details Reminder,RMA,true
+43,Reminders to Provide Credit Details For HP RMA Requests,RMA,true
+44,RMA Update Submitted by Customer,RMA,true
+45,RMA Number And Shipping Instruction Updated,RMA,true
+46,RMA ASN Details Updated,RMA,true
+47,Supplier Credit Note Details Updated by Supplier,RMA,true
+48,Reserved for Future Alert,RMA,true
