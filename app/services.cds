@@ -1,2 +1,2 @@
 
-using from './emailmanagement/annotations';
+using from './email/annotations';

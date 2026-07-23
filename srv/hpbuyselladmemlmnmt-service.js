@@ -349,50 +349,50 @@ module.exports = cds.service.impl(async function () {
      * Alert List (Virtual Entity)
      *****************************************************************/
 
-    srv.on("READ", "AlertList", async (req) => {
+    // srv.on("READ", "AlertList", async (req) => {
 
-        const tx = cds.transaction(req);
+    //     const tx = cds.transaction(req);
 
-        const userId = req.user.id;
+    //     const userId = req.user.id;
 
-        const alerts = await tx.run(
-            SELECT.from(Alert)
-                .orderBy("alertId")
-        );
+    //     const alerts = await tx.run(
+    //         SELECT.from(Alert)
+    //             .orderBy("alertId")
+    //     );
 
-        const subscriptions = await tx.run(
-            SELECT.from(Subscription)
-                .where({
-                    userId: userId
-                })
-        );
+    //     const subscriptions = await tx.run(
+    //         SELECT.from(Subscription)
+    //             .where({
+    //                 userId: userId
+    //             })
+    //     );
 
-        return alerts.map(alert => {
+    //     return alerts.map(alert => {
 
-            const subscription = subscriptions.find(
-                s => s.alert_alertId === alert.alertId
-            );
+    //         const subscription = subscriptions.find(
+    //             s => s.alert_alertId === alert.alertId
+    //         );
 
-            return {
+    //         return {
 
-                alertId: alert.alertId,
+    //             alertId: alert.alertId,
 
-                description: alert.description,
+    //             description: alert.description,
 
-                category: alert.category,
+    //             category: alert.category,
 
-                active: alert.active,
+    //             active: alert.active,
 
-                subscribed: !!subscription,
+    //             subscribed: !!subscription,
 
-                subscriptionId: subscription ? subscription.ID : null,
+    //             subscriptionId: subscription ? subscription.ID : null,
 
-                filterEnabled: !!subscription
+    //             filterEnabled: !!subscription
 
-            };
+    //         };
 
-        });
+    //     });
 
-    });
+ //   });
 
 });

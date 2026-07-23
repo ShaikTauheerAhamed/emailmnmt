@@ -31,7 +31,7 @@ entity Alert :  managed {
     key alertId : Integer;
     description : String(120);
     category    : AlertCategory;
-    active      : Boolean default true;
+    active      : Composition of many Subscription on active.alert = $self;
 }
 entity Subscription : cuid, managed {
     userId    : String(256);
@@ -46,13 +46,13 @@ entity SubscriptionFilter : cuid {
     value         : String(40);
     valueText     : String(120);
 }
-@cds.persistence.skip
-entity AlertList {
-    key alertId       : Integer;
-    description       : String(120);
-    category          : AlertCategory;
-    active            : Boolean;
-    subscribed        : Boolean;
-    subscriptionId    : UUID;
-    filterEnabled     : Boolean;
-}
+// @cds.persistence.skip
+// entity AlertList {
+//     key alertId       : Integer;
+//     description       : String(120);
+//     category          : AlertCategory;
+//     active            : Boolean;
+//     subscribed        : Boolean;
+//     subscriptionId    : UUID;
+//     filterEnabled     : Boolean;
+// }

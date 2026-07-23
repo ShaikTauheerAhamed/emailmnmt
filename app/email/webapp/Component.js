@@ -1,10 +1,10 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "hpbuysell/adm/emlmnmt/emailmanagement/model/models"
+    "hpbuysell/adm/emlmnmt/email/model/models"
 ], (UIComponent, models) => {
     "use strict";
 
-    return UIComponent.extend("hpbuysell.adm.emlmnmt.emailmanagement.Component", {
+    return UIComponent.extend("hpbuysell.adm.emlmnmt.email.Component", {
         metadata: {
             manifest: "json",
             interfaces: [

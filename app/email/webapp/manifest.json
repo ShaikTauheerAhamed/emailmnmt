@@ -1,7 +1,7 @@
 {
   "_version": "1.86.0",
   "sap.app": {
-    "id": "hpbuysell.adm.emlmnmt.emailmanagement",
+    "id": "hpbuysell.adm.emlmnmt.email",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,15 +13,15 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.29.0",
-      "toolsId": "3feea5b0-5ce0-4930-887c-59c0e3e73e58"
+      "toolsId": "a85351d9-98e7-4df7-82cf-0ca262759867"
     },
     "dataSources": {
       "mainService": {
-        "uri": "/odata/v4/alert/",
+        "uri": "/odata/v2/alert/",
         "type": "OData",
         "settings": {
           "annotations": [],
-          "odataVersion": "4.0"
+          "odataVersion": "2.0"
         }
       }
     },
@@ -60,8 +60,11 @@
     "dependencies": {
       "minUI5Version": "1.150.0",
       "libs": {
-        "sap.m": {},
-        "sap.ui.core": {}
+          "sap.m": {},
+          "sap.ui.core": {},
+          "sap.ui.comp": {},
+          "sap.ui.table": {},
+          "sap.f": {}
       }
     },
     "contentDensities": {
@@ -72,16 +75,15 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "hpbuysell.adm.emlmnmt.emailmanagement.i18n.i18n"
+          "bundleName": "hpbuysell.adm.emlmnmt.email.i18n.i18n"
         }
       },
       "": {
         "dataSource": "mainService",
         "preload": true,
         "settings": {
-          "operationMode": "Server",
-          "autoExpandSelect": true,
-          "earlyRequests": true
+            "defaultBindingMode": "TwoWay",
+            "defaultCountMode": "Inline"
         }
       }
     },
@@ -100,28 +102,28 @@
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
-        "path": "hpbuysell.adm.emlmnmt.emailmanagement.view",
+        "path": "hpbuysell.adm.emlmnmt.email.view",
         "async": true,
-        "viewPath": "hpbuysell.adm.emlmnmt.emailmanagement.view"
+        "viewPath": "hpbuysell.adm.emlmnmt.email.view"
       },
       "routes": [
         {
-          "name": "RouteAlert",
+          "name": "RouteAlertView",
           "pattern": ":?query:",
           "target": [
-            "TargetAlert"
+            "TargetAlertView"
           ]
         }
       ],
       "targets": {
-        "TargetAlert": {
-          "id": "Alert",
-          "name": "Alert"
+        "TargetAlertView": {
+          "id": "AlertView",
+          "name": "AlertView"
         }
       }
     },
     "rootView": {
-      "viewName": "hpbuysell.adm.emlmnmt.emailmanagement.view.App",
+      "viewName": "hpbuysell.adm.emlmnmt.email.view.App",
       "type": "XML",
       "id": "App",
       "async": true

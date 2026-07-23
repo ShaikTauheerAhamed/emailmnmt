@@ -68,6 +68,6 @@ service AlertService {
         alertId : Integer
     ) returns array of db.FilterFieldCode;
 
-    entity AlertList as projection on db.AlertList;
+    // entity AlertList as projection on db.AlertList;
 
 }

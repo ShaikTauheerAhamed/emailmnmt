@@ -3,7 +3,7 @@ sap.ui.define([
 ], (BaseController) => {
   "use strict";
 
-  return BaseController.extend("hpbuysell.adm.emlmnmt.emailmanagement.controller.App", {
+  return BaseController.extend("hpbuysell.adm.emlmnmt.email.controller.App", {
       onInit() {
       }
   });

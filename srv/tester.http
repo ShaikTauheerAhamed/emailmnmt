@@ -2,7 +2,7 @@
 get http://localhost:4004/odata/v4/AlertService/$metadata
 
 ### alert mtadata
-GET http://localhost:4004/odata/v4/alert/$metadata
+GET http://localhost:4004/odata/v2/alert/$metadata
 
 ### alert Alerts
 GET http://localhost:4004/odata/v4/alert/Alerts
@@ -70,7 +70,7 @@ GET http://localhost:4004/odata/v4/alert/MySubscriptions
 Accept: application/json
 
 ### add filter
-POST http://localhost:4004/odata/v4/alert/addFilterValue
+POST http://localhost:40425/odata/v4/alert/addFilterValue
 Content-Type: application/json
 
 {
@@ -89,3 +89,6 @@ GET http://localhost:4004/odata/v4/alert/AlertList
 
 ###Applcable fields
 GET http://localhost:4004/odata/v4/alert/applicableFields(alertId=20)
+
+### check subscription
+GET http://localhost:4004/odata/v4/alert/

@@ -1,0 +1,121 @@
+<mvc:View
+    controllerName="hpbuysell.adm.emlmnmt.email.controller.AlertView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:i="sap.ui.unified"
+    xmlns:f="sap.f"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable">
+    <!-- <Page id="page2" title="Alert Management" titleAlignment="Center" showHeader="false" showFooter="false">
+    <content> -->
+    <smartFilterBar:SmartFilterBar
+    id="smartFilterBar1"
+    entitySet="Alerts"
+    persistencyKey="SmartFilter_Explored"
+    basicSearchFieldName="alertId"
+    enableBasicSearch="false">
+
+    <smartFilterBar:controlConfiguration>
+
+        <smartFilterBar:ControlConfiguration
+            id="_IDGenControlConfiguration1"
+            key="alertId"
+            label="Alert ID"
+            visibleInAdvancedArea="true">
+
+            <smartFilterBar:customControl>
+                <Input
+                    id="alertIdFilter"
+                    showValueHelp="true"
+                    valueHelpRequest=".onAlertIdValueHelp"
+                    placeholder="Select Alert ID" />
+            </smartFilterBar:customControl>
+              
+        </smartFilterBar:ControlConfiguration>
+    </smartFilterBar:controlConfiguration>
+</smartFilterBar:SmartFilterBar>
+
+<Toolbar >
+<ToolbarSpacer/>
+<Button text="Create Alert" press=".onCreateAlert" type="Emphasized"/>
+<Button text="Delete Alert" press=".onDeleteAlert" type="Emphasized"/>
+
+</Toolbar>
+
+<!-- <Label text = "{i18n>Gate Token Number}" textAlign="Center" ></Label>
+       
+              <FlexBox
+          direction="Row"
+          justifyContent="Start"
+          alignItems="Start"
+          >
+      <Input id="gate" value="{expandedEntity>/token_TokenNo}" width="auto" showValueHelp="true" valueHelpRequest="onChecklistRequest" class="sapUiSmallMarginEnd"   ></Input>
+      <Button text="Search" press="onCheckList" type="Emphasized"  />
+
+  </FlexBox> -->
+  
+  <smartTable:SmartTable
+    id="alertSmartTable"
+    entitySet="Alerts"
+    smartFilterId="smartFilterBar1"
+    tableType="ResponsiveTable"
+    enableExport="true"
+    useVariantManagement="true"
+    useTablePersonalisation="true"
+    showRowCount="true"
+    persistencyKey="SmartTableAnalytical_Explored"
+    enableAutoBinding="true"
+    enableAutoColumnWidth="true"
+    class="sapUiResponsiveContentPadding"
+    header="Email Alert Subscription"
+ 
+    beforeRebindTable="onBeforeRebindTable1"
+
+
+    initiallyVisibleFields="alertId,description,category">
+
+    <Table
+        id="alertTable"
+        mode="MultiSelect"
+        >
+
+        <columns>
+            <Column >
+                <Text text="Filter"/>
+            </Column>
+            <Column>
+                <Text text="Subscribed"/>
+            </Column>
+
+        </columns>
+
+        <items>
+
+            <ColumnListItem >
+
+                <cells>
+
+                   <Button press=".onRowPress" icon="sap-icon://filter" type="Attention"></Button>
+                
+                    <!-- Switch -->
+                    <Switch
+                        state="{active}"
+                        change=".onSubscribeChange"/>
+                        
+ <!-- <Button
+            icon="sap-icon://filter"
+            type="Transparent"
+            press=".onFilterPress" /> -->
+
+
+                </cells>
+
+            </ColumnListItem>
+
+        </items>
+
+    </Table>
+
+</smartTable:SmartTable>
+
+</mvc:View>
